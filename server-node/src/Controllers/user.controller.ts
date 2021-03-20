@@ -21,7 +21,7 @@ export default class UserController {
 
 			user.email = body.email
 			user.name = body.name
-			user.password =  encryptPassword(body.password)
+			user.password = encryptPassword(body.password)
 			await user.save()
 
 			return created(res)
