@@ -1,5 +1,6 @@
 import express from 'express'
 
+import './Shared/database.shared'
 import routes from './routes'
 
 const app: express.Application = express()
