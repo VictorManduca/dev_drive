@@ -8,7 +8,7 @@ import AuthMiddleware from '../Middlewares/auth.middleware'
 export default class UserController {
 	public async index(req: Request, res: Response) {
 		try {
-			const allUsers = await User.find()
+			const allUsers = await User.find({ select: ['email', 'name'] })
 			return ok(res, allUsers)
 		} catch (error) {
 			return badRequest(res, error)
