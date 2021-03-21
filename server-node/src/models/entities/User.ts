@@ -1,4 +1,6 @@
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
+import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm'
+
+import { Permission } from './Permission'
 
 @Entity()
 export class User extends BaseEntity {
@@ -13,4 +15,7 @@ export class User extends BaseEntity {
 
 	@Column()
 	password: string
+
+	@OneToMany(() => Permission, permission => permission.user)
+	permission: Permission[]
 }
