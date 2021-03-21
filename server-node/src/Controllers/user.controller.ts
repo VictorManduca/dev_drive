@@ -1,11 +1,14 @@
 import { Request, Response } from 'express'
 
-import { encryptPassword } from '../Shared/crypto.shared'
-import { created, ok, badRequest, unauthorized, emptyOk } from '../Shared/response.shared'
-import { User } from '../models/entities/User'
 import AuthMiddleware from '../Middlewares/auth.middleware'
+import { alreadyExistUser } from '../Shared/user.shared'
+import { created, ok, badRequest, unauthorized, emptyOk } from '../Shared/response.shared'
+import { encryptPassword } from '../Shared/crypto.shared'
+import { User } from '../models/entities/User'
 
 export default class UserController {
+	constructor() { }
+
 	public async index(req: Request, res: Response) {
 		try {
 			const allUsers = await User.find({ select: ['email', 'name'] })
@@ -23,10 +26,15 @@ export default class UserController {
 			user.email = body.email
 			user.name = body.name
 			user.password = encryptPassword(body.password)
-			await user.save()
 
-			return created(res)
+			if (await alreadyExistUser(user)) {
+				return badRequest(res, 'User already exist')
+			} else {
+				await user.save()
+				return created(res)
+			}
 		} catch (error) {
+			console.error({ error })
 			return badRequest(res, error)
 		}
 	}
