@@ -27,5 +27,6 @@ Now you can access the API in `localhost:8000`.
 If you are running the project in a WSL and you can't access the project in `localhost`, please follow the guide:  
 - If you don't have `net-tools` installed in your WSL system run in your WSL `sudo apt install net-tools`
 - Type `ifconfig`
-- Copy the `inet` IP from the first bridge (example: `inet 112.12.242.521`. You have to copy the number ahead of `inet`)
+- Copy the `inet` IP from the first bridge  
+(example: `inet 112.12.242.521`. You have to copy the number ahead of `inet`)
 - Now replace the `localhost to the given IP in Postman or Insomnia 
