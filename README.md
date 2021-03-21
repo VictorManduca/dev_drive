@@ -5,7 +5,7 @@ Under construction :construction:
 
 ## About :book:
 I'm just practicing Typescript in the backend with Node.js and TypeORM.  
-So, to do that I'm gonna build a Google Drive clone
+So, to do that I'm gonna build a simple Google Drive clone.
 
 ## All technologies :computer:
  - Typescript
@@ -18,10 +18,10 @@ So, to do that I'm gonna build a Google Drive clone
 ## Step-by-Step to run the project :footprints:
 ### Backend with Node.js
 I will assume that you already have Node.js installed.  
- - Copy the content of the `.env.example` file and create the `.env` file with the copied content.  
- - Install dependencies: `npm install`.  
- - Run the project: `npm run dev`.  
- - Now you can access the API in `localhost:8000`.
+ - Copy the content of the `.env.example` file and create the `.env` file with the copied content  
+ - Install dependencies: `npm install`  
+ - Run the project: `npm run dev`  
+ - Now you can access the API in `localhost:8000`
 
 ## Troubleshoot :exclamation:
 If you are running the project in a WSL and you can't access the project in `localhost`, please follow the guide:  
