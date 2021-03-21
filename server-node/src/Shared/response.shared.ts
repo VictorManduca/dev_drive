@@ -11,3 +11,15 @@ export function badRequest(res: Response, error: any) {
 export function created(res: Response) {
 	return res.status(201).send()
 }
+
+export function unauthorized(res: Response) {
+	return res.status(401).send()
+}
+
+export function serverError(res: Response, error: any) {
+	return res.status(500).json({ error: error })
+}
+
+export function emptyOk(res: Response) {
+	return res.status(200).send()
+}
