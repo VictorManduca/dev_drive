@@ -20,7 +20,6 @@ export default class AuthMiddleware {
 				jwt.verify(token, secret)
 				return next()
 			} catch (error) {
-				console.error({ error })
 				return unauthorized(res)
 			}
 		}

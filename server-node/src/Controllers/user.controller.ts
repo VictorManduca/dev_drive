@@ -45,7 +45,6 @@ export default class UserController {
 				return ok(res, { token })
 			}
 		} catch (error) {
-			console.error({ error })
 			return badRequest(res, error)
 		}
 	}
