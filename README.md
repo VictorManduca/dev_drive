@@ -1,10 +1,6 @@
 <h1 align="center">Dev Drive</h1>
 <p align="center">Under construction :construction:</p>
 
-## About :book:
-I'm just practicing Typescript in the backend with Node.js and TypeORM.  
-So, to do that I'm gonna build a simple Google Drive clone.
-
 ## All technologies :computer:
  - Typescript
  - Node.js
